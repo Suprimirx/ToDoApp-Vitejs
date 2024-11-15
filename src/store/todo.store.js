@@ -1,6 +1,6 @@
 import { Todo } from "../todos/models/todo.model"
 
-const Filters = {
+export const Filters = {
     All: 'all',
     Completed: 'Completed',
     Pending: 'Pending'
@@ -12,7 +12,6 @@ const state = {
         new Todo('Piedra del infinito'), 
         new Todo('Piedra del poder'),
         new Todo('Piedra de la realidad'),
-
     ],
     filter: Filters.All
 }
@@ -77,7 +76,7 @@ const deleteCompleted = () => {
     saveStateToLocalStorage();
 }
 
-const setFilter = (newFilter = Filters.all) => {
+const setFilter = (newFilter = Filters.All) => {
     //Todo: Investigar. Video 113
     state.filter = newFilter;
     saveStateToLocalStorage();
